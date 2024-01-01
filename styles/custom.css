@@ -1,0 +1,63 @@
+/* dark theme color alterations -- this affects button color and hover, active conditions*/
+[data-theme="dark"] {
+    --primary: #5e35b1;
+    --primary-hover: #673ab7;
+    --primary-focus: rgba(94, 53, 177, 0.25);
+    --primary-inverse: #FFF;
+}
+
+:root {
+    --form-element-active-border-color: var(--primary);
+    --form-element-focus-color: var(--primary-focus);
+    --switch-color: var(--primary-inverse);
+    --switch-checked-background-color: var(--primary);
+}
+/* entire app is mobile friendly designed*/
+#app {
+
+    max-width: 700px;
+    margin: auto;
+}
+/* page title */
+h2 {
+    text-align:center;
+    padding-top:2vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+}
+/* audio player card*/
+.media-player-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+/* card and grid for song buttons*/
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Single column layout for the buttons on small screens */
+@media (max-width: 749px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single button across */
+        gap: 1em;
+    }
+}
+/* Two buttons across on larger screens */
+@media (min-width: 750px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+    }
+}
+.button-media {
+    margin: 5px;
+}
+
+
